@@ -4,6 +4,6 @@ application = Flask(__name__)
 def hello_world():
     return 'Hello World'
 
-@application.route('/user', methods=['GET'])
+@application.route('/user', methods=['GET','POST'])
 def view_user():
-    return "Hello, your name is"
+    return "Hello, your name is" + request.form['name']
