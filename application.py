@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-import request
+
 application = Flask(__name__)
 @application.route('/')
 def hello_world():
@@ -8,4 +8,6 @@ def hello_world():
 @application.route('/user', methods=['GET','POST'])
 def view_user():
     if request.method == 'GET':
-        return "Hello, your name is" + request.form['name']
+        return "Hello, I dont know what your name is"
+    if request.method == 'POST':
+        return "Hello, your name is: " + request.form['name']
