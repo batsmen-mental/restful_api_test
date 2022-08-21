@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, json
 
 application = Flask(__name__)
 
@@ -13,5 +13,4 @@ def view_user():
     if request.method == 'GET':
         return "Hello, I dont know what your name is"
     if request.method == 'POST':
-        name = request.form['name']
-        return "Hello, your name is: " + name
+        return json.dumps({'name' : request.form['name']})
